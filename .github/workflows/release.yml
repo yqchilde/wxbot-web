@@ -44,6 +44,7 @@ jobs:
 
       - name: Build
         run: |
+          mv wxbot-web/build.sh .
           bash build.sh
 
       - name: Release
