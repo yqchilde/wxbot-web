@@ -19,7 +19,7 @@ cp -r ../dist .
 git add .
 git config --local user.name "yqchilde"
 git config --local user.email "yqchilde@gmail.com"
-git commit --allow-empty -m "upload ${version} dist files" -a
+git commit --allow-empty -m "feat: upload ${version} dist files" -a
 git tag -a "$version" -m "release ${version}"
 cd ..
 
