@@ -23,7 +23,7 @@ jobs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
-        go-version: [1.19]
+
     name: Release
     runs-on: ${{ matrix.platform }}
     steps:
@@ -46,6 +46,12 @@ jobs:
         run: |
           mv wxbot-web/build.sh .
           bash build.sh
+          
+      - name: Upload dist files
+        uses: ad-m/github-push-action@master
+        with:
+          branch: main
+          directory: wxbot-web
 
       - name: Release
         uses: softprops/action-gh-release@v1
