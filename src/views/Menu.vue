@@ -36,11 +36,9 @@
 import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
-import { useMessage } from 'naive-ui'
 
 const menuData = ref(null);
 const router = useRouter();
-const message = useMessage();
 let origin = window.location.origin;
 let wxid = router.currentRoute.value.query.wxid;
 
