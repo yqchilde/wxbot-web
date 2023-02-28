@@ -28,7 +28,7 @@
   </div>
   <div style="padding: 20px" v-else>
     <n-result status="404" title="404 资源不存在" description="生活总归带点荒谬">
-  </n-result>
+    </n-result>
   </div>
 </template>
   
@@ -41,10 +41,11 @@ import { useMessage } from 'naive-ui'
 const menuData = ref(null);
 const router = useRouter();
 const message = useMessage();
+let origin = window.location.origin;
 let wxid = router.currentRoute.value.query.wxid;
 
 // 查询指定wxid菜单
-axios.get('http://127.0.0.1:9528/wxbot/menu?wxid='+wxid).then((item) => {
+axios.get(origin + '/wxbot/menu?wxid=' + wxid).then((item) => {
   if (item.data.code != 200) {
     return
   }
