@@ -1,6 +1,6 @@
 <template>
   <h2 style="text-align: center;">插件指令合集</h2>
-  <div style="padding: 20px" v-if="menuData !== null">
+  <div style="padding: 20px" v-if="menuData.length > 0">
     <n-collapse accordion>
       <n-collapse-item v-for="item in menuData" :key="item.name" :name="item.name">
         <template #header>
@@ -26,7 +26,7 @@
       </n-collapse-item>
     </n-collapse>
   </div>
-  <div style="padding: 20px" v-else>
+  <div style="padding: 20px" v-else-if="menuData.length === 0">
     <n-result status="404" title="404 资源不存在" description="生活总归带点荒谬">
     </n-result>
   </div>
@@ -37,7 +37,7 @@ import { ref } from 'vue'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 
-const menuData = ref(null);
+const menuData = ref([]);
 const router = useRouter();
 let origin = window.location.origin;
 let wxid = router.currentRoute.value.query.wxid;
