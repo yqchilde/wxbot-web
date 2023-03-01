@@ -17,12 +17,28 @@
             关闭
           </n-text>
         </template>
-        <n-text type="info">
-          <div>插件服务名：{{ item.name }}</div>
-          <div>默认开启状态：{{ item.defStatus }}</div>
-          <div>当前开启状态：{{ item.curStatus }}</div>
-          <div>插件描述：{{ item.describe }}</div>
-        </n-text>
+        <div>
+          <n-table :single-line="false">
+            <tbody>
+              <tr>
+                <td class="td1">服务名</td>
+                <td>{{ item.name }}</td>
+              </tr>
+              <tr>
+                <td class="td1">默认状态</td>
+                <td>{{ item.defStatus }}</td>
+              </tr>
+              <tr>
+                <td class="td1">当前状态</td>
+                <td>{{ item.curStatus }}</td>
+              </tr>
+              <tr>
+                <td class="td1">帮助</td>
+                <td style="white-space: pre-wrap;">{{ item.describe }}</td>
+              </tr>
+            </tbody>
+          </n-table>
+        </div>
       </n-collapse-item>
     </n-collapse>
   </div>
@@ -56,4 +72,8 @@ axios.get(origin + '/wxbot/menu?wxid=' + wxid).then((item) => {
   menuData.value = sortedArr;
 })
 </script>
-<style scoped></style>
+<style scoped>
+.td1 {
+  width: 25%;
+}
+</style>
