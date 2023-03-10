@@ -14,7 +14,7 @@ cd ../
 
 # 提交dist
 cd web-dist || exit
-find . ( -name ".ico" -o -name ".js" -o -name ".css" -o -name ".html" ) -type f -delete
+find . \( -name "*.ico" -o -name "*.js" -o -name "*.css" -o -name "*.html" \) -type f -delete
 cp -r ../dist/* .
 git add .
 git config --local user.name "yqchilde"
