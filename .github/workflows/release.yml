@@ -45,9 +45,9 @@ jobs:
       - name: Checkout dist repo
         uses: actions/checkout@v3
         with:
-          repository: yqchilde/wxbot-web-dist
+          repository: yqchilde/wxbot
           ref: main
-          path: web-dist
+          path: wxbot
           persist-credentials: false
           fetch-depth: 0
 

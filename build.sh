@@ -13,14 +13,12 @@ cp -r dist ../
 cd ../
 
 # 提交dist
-cd web-dist || exit
-find . \( -name "*.ico" -o -name "*.js" -o -name "*.css" -o -name "*.html" \) -type f -delete
-cp -r ../dist/* .
+cd wxbot/web || exit
+cp -r dist/ .
 git add .
 git config --local user.name "yqchilde"
 git config --local user.email "yqchilde@gmail.com"
-git commit --allow-empty -m "feat: upload ${version} dist files" -a
-git tag -a "$version" -m "release ${version}"
+git commit --allow-empty -m "feat: Auto upload ${version} dist files" -a
 cd ../
 
 # 压缩
