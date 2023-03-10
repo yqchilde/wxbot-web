@@ -42,11 +42,11 @@ jobs:
           fetch-depth: 0
           submodules: recursive
           
-      - name: Checkout dist repo
+      - name: Checkout wxbot repo
         uses: actions/checkout@v3
         with:
           repository: yqchilde/wxbot
-          ref: main
+          ref: hook
           path: wxbot
           persist-credentials: false
           fetch-depth: 0

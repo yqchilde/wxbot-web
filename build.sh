@@ -14,7 +14,8 @@ cd ../
 
 # 提交dist
 cd wxbot/web || exit
-cp -r dist/ .
+rm -rf dist
+cp -r ../../dist/ .
 git add .
 git config --local user.name "yqchilde"
 git config --local user.email "yqchilde@gmail.com"
