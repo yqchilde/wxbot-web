@@ -61,8 +61,8 @@ jobs:
         with:
           github_token: ${{ secrets.WXBOT_TOKEN }}
           branch: main
-          directory: web-dist
-          repository: yqchilde/wxbot-web-dist
+          directory: wxbot
+          repository: yqchilde/wxbot
 
       - name: Release
         uses: softprops/action-gh-release@v1
