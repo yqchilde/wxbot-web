@@ -60,7 +60,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.WXBOT_TOKEN }}
-          branch: hook
+          branch: main
           directory: wxbot
           repository: yqchilde/wxbot
 
